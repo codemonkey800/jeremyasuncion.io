@@ -6,7 +6,7 @@
     "last 3 versions"
   ],
   "scripts": {
-    "build": "NODE_ENV=production webpack --colors --progress",
+    "build": "cross-env NODE_ENV=production webpack --colors --progress",
     "deploy": "gh-pages -d dist",
     "lint": "eslint .",
     "start": "webpack-dev-server --colors --progress"
@@ -34,6 +34,7 @@
     "babel-preset-env": "^1.4.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "cross-env": "^4.0.0",
     "css-loader": "^0.28.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
