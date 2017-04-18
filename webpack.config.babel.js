@@ -1,3 +1,4 @@
+import BabiliPlugin from 'babili-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HTMLPlugin from 'html-webpack-plugin';
 import OfflinePlugin from 'offline-plugin';
@@ -110,6 +111,9 @@ export default {
         minimize: true,
       }),
       new OfflinePlugin(),
+      new BabiliPlugin({
+        comments: false,
+      }),
     ],
   ),
 };

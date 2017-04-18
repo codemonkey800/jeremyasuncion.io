@@ -16,12 +16,5 @@
     "transform-runtime",
     "react-require",
     "syntax-dynamic-import"
-  ],
-  "env": {
-    "production": {
-      "presets": [
-        "babili"
-      ]
-    }
-  }
+  ]
 }
