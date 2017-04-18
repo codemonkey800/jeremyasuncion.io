@@ -1,2 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
-@import 'normalize.css'
+@import 'normalize.css';
+
+body, html {
+  border: 0;
+  margin: 0;
+  padding: 0;
+
+  width: 100vw;
+  height: 100vh;
+}

@@ -1,9 +1,9 @@
 /* eslint-disable global-require */
 
 import 'babel-polyfill';
-// import 'index.css';
+import 'index.css';
 
-import OfflinePlugin from 'offline-plugin/runtime';
+import * as OfflinePlugin from 'offline-plugin/runtime';
 import injectTapEvents from 'react-tap-event-plugin';
 import { AppContainer } from 'react-hot-loader';
 import { MuiThemeProvider } from 'material-ui';
@@ -31,4 +31,4 @@ function renderApp() {
 
 renderApp();
 
-if (module.hot) module.hot.accept('components/App', () => renderApp());
+if (module.hot) module.hot.accept('./components/App', () => renderApp());
