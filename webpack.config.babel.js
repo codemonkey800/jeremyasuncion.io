@@ -41,7 +41,7 @@ export default {
     filename: isDev ? '[name].js' : '[name].[chunkhash].js',
   },
   module: {
-    rules: [
+    rules: [].concat(
       {
         enforce: 'pre',
         test: /\.js$/,
@@ -58,6 +58,21 @@ export default {
         },
       },
       {
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+        },
+      },
+
+      isDev ? {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader?modules',
+          'postcss-loader',
+        ],
+      } : {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
@@ -67,14 +82,7 @@ export default {
           ],
         }),
       },
-      {
-        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10000,
-        },
-      },
-    ],
+    ),
   },
   plugins: [].concat(
     new webpack.NoEmitOnErrorsPlugin(),
