@@ -6,6 +6,7 @@ var __wpo = {
       "/manifest.66f0f73278396d9f18c4.js",
       "/styles.23ced74561e85aae5a2572d05657f2c2.css",
       "/",
+      "/404.html",
       "/CNAME"
     ],
     "additional": [],
@@ -18,11 +19,12 @@ var __wpo = {
     "b2e89ffac1fab1c1ebd0c727049b91ae328bd263": "/manifest.66f0f73278396d9f18c4.js",
     "cd0a05929090ed4320334d5fa542491a31ac3139": "/styles.23ced74561e85aae5a2572d05657f2c2.css",
     "62dddb0c105171e92e171041341ae50186dd5fee": "/",
+    "9588270b1b49801fc4896a7b655da45ec09f6d96": "/404.html",
     "ea3c61a3edb62801a8b0d6661570a96871c22ce4": "/CNAME"
   },
   "strategy": "changed",
   "responseStrategy": "cache-first",
-  "version": "4/18/2017, 2:30:27 PM",
+  "version": "4/18/2017, 2:40:52 PM",
   "name": "webpack-offline",
   "pluginVersion": "4.7.0",
   "relativePaths": false
