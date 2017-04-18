@@ -1,4 +1,5 @@
 import BabiliPlugin from 'babili-webpack-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HTMLPlugin from 'html-webpack-plugin';
 import OfflinePlugin from 'offline-plugin';
@@ -109,6 +110,10 @@ export default {
       title: packageConfig.name,
       template: './src/index.ejs',
     }),
+
+    new CopyPlugin([
+      { from: './CNAME' },
+    ]),
 
     isDev ? [
       new webpack.NamedModulesPlugin(),
