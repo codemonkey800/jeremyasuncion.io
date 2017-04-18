@@ -1,8 +1,10 @@
 /* eslint-disable global-require */
 
 import 'babel-polyfill';
-import 'index.css';
+// import 'index.css';
 
+import OfflinePlugin from 'offline-plugin/runtime';
+import injectTapEvents from 'react-tap-event-plugin';
 import { AppContainer } from 'react-hot-loader';
 import { MuiThemeProvider } from 'material-ui';
 import { render } from 'react-dom';
@@ -10,8 +12,10 @@ import { render } from 'react-dom';
 import App from 'components/App';
 import theme from 'utils/Theme';
 
+injectTapEvents();
+
 if (process.env.NODE_ENV === 'production') {
-  require('offline-plugin/runtime').install();
+  OfflinePlugin.install();
 }
 
 function renderApp() {
@@ -27,4 +31,4 @@ function renderApp() {
 
 renderApp();
 
-if (module.hot) module.hot.accept('./components/App', () => renderApp());
+if (module.hot) module.hot.accept('components/App', () => renderApp());
