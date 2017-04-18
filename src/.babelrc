@@ -1,0 +1,27 @@
+{
+  "presets": [
+    ["env", {
+      "browsers": "last 3 versions",
+      "modules": false,
+      "useBuiltIns": true
+    }],
+    "stage-0",
+    "react"
+  ],
+  "plugins": [
+    ["module-resolver", {
+      "root": ["src"]
+    }],
+    "react-hot-loader/babel",
+    "transform-runtime",
+    "react-require",
+    "syntax-dynamic-import"
+  ],
+  "env": {
+    "production": {
+      "presets": [
+        "babili"
+      ]
+    }
+  }
+}
