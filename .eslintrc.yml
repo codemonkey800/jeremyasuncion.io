@@ -20,10 +20,6 @@ env:
   es6: on
   shared-node-browser: on
 
-settings:
-  import/resolver:
-    babel-module: {}
-
 rules:
   compat/compat: 2
   react/jsx-filename-extension: 0
