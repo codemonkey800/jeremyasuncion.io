@@ -1,6 +1,34 @@
 # jeremyasuncion.io
 
-My personal website :)
+Sources for everything under my own infrastructure :)
+
+I'm using a [\$5 Vultr VPS](https://www.vultr.com/pricing/), which includes a
+25GB SSD, 1 CPU, 1GB of RAM, and 1000GB of bandwidth.
+
+For application orchestration, I'm using
+[dokku](http://dokku.viewdocs.io/dokku/) for a Heroku like PaaS workflow.
+
+## Emoji index
+I've recently started using Emojis in a lot of my commit messages, READMEs, and
+wherever I can on GitHub. Here's what each emoji I use represents. It may be
+subject to change:
+
+- :tada: - Commits that include something so amazing that I have to celebrate :tada:
+- :wrench: - Commits that are relatively small to medium in size
+- :warning: - Commits that introduce configs or code that break things
+
+## What's included?
+
+```
+services/ # Common services used across applications.
+  storage # S3-like storage backend.
+```
+
+## Why not Firebase/AWS/Heroku/etc.
+
+I admit, handling all the infrastructure is tedious. But it's also a lot of
+fun. I'm sure at whatever company I work at, they'll have their own workflow
+for deploying applications. This is mine and it's been a really fun experience.
 
 ## License
 
