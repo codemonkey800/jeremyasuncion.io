@@ -9,9 +9,7 @@ const port = parseInt(process.env.PORT || 8080, 10);
 
 const app = new Koa();
 
-app.use(ctx => {
-  renderPage(ctx);
-});
+app.use(ctx => renderPage(ctx));
 
 function main() {
   app.listen(port, host, () => {

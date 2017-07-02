@@ -1,23 +1,43 @@
 /* eslint-disable */
 
 import React from 'react';
+import Helmet from 'react-helmet';
 import { MuiThemeProvider } from 'material-ui';
-import { renderToString } from 'react-dom/server';
+import {
+  renderToStaticMarkup,
+  renderToString,
+} from 'react-dom/server';
 
 import AppRouter from './app-router';
+import HTMLPage from './html-page';
 import { createStyleManager } from '../shared/theme';
 
 export function renderPage(ctx) {
   const { styleManager, theme } = createStyleManager();
 
-  const html = renderToString((
+  const context = {};
+  const appStyles = styleManager.sheetsToString();
+  const appHtml = renderToString((
     <MuiThemeProvider styleManager={styleManager} theme={theme}>
-      <AppRouter location={ctx.url} />
+      <AppRouter context={context} location={ctx.url} />
     </MuiThemeProvider>
   ));
 
-  const css = styleManager.sheetsToString();
+  if (context.url) {
+    ctx.redirect(context.url);
+  } else {
+    const helmet = Helmet.renderStatic();
+    const html = renderToStaticMarkup((
+      <HTMLPage
+        appHtml={appHtml}
+        helmet={helmet}
+      />
+    ));
 
-  ctx.body = css;
+    ctx.body = `
+      <!doctype html>
+      ${html}
+    `;
+  }
 }
 
