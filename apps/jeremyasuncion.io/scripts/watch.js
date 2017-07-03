@@ -1,25 +1,24 @@
-import clear from 'clear';
-import nodemon from 'nodemon';
+import MemoryFS from 'memory-fs';
+import { spawn } from 'child_process';
 
 import { serverCompiler } from './build';
 import { resolve } from './common';
 
 function main() {
-  let watcherStarted = false;
-  serverCompiler.watch({}, (err, stats) => {
+  const fs = new MemoryFS();
+  serverCompiler.outputFileSystem = fs;
+
+  let serverProcess = null;
+  serverCompiler.watch({}, err => {
     if (err) throw err;
-    clear();
-    console.log(stats.toString({ colors: true }));
-    if (!watcherStarted) {
-      watcherStarted = true;
-      nodemon({
-        script: resolve('dist/server.js'),
-        watch: [
-          resolve('dist/server.js'),
-          resolve('dist/*.server.js'),
-        ],
+
+    const serverFile = resolve('dist/server.js');
+    const serverCode = fs.readFileSync(serverFile, 'utf-8');
+
+    if (!serverProcess) {
+      serverProcess = spawn('node', ['-e', serverCode], {
+        stdio: 'inherit',
       });
-      nodemon.on('quit', () => process.exit());
     }
   });
 }

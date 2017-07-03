@@ -35,20 +35,20 @@ export default {
     ],
   },
 
-  plugins: [
-    ...common.plugins,
+  plugins: [].concat(
+    common.plugins,
 
     new webpack.ProvidePlugin({
       fetch: 'node-fetch',
     }),
 
-    ...(!dev ? [] : [
+    !dev ? [] : [
       new webpack.BannerPlugin({
         banner: 'require("source-map-support").install();',
         raw: true,
         entryOnly: true,
       }),
-    ]),
-  ],
+    ],
+  ),
 };
 

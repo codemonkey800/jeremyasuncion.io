@@ -35,7 +35,10 @@ export default {
       'process.env.NODE_ENV': JSON.stringify(dev ? 'development' : 'production'),
     }),
 
-    dev ? [] : [
+    dev ? [
+      new webpack.NamedModulesPlugin(),
+      new webpack.HotModuleReplacementPlugin(),
+    ] : [
       new webpack.optimize.UglifyJsPlugin({
         comments: false,
       }),

@@ -4,10 +4,10 @@
   "description": "My personal website :)",
   "license": "MIT",
   "scripts": {
-    "build": "run-p build:*",
+    "build": "run-s clean && run-p build:*",
     "build:client": "babel-node scripts/build",
     "build:server": "babel-node scripts/build server",
-    "clean": "del dist",
+    "clean": "rm -rf dist",
     "lint": "eslint .",
     "start": "node dist/server",
     "watch": "babel-node scripts/watch"
@@ -24,6 +24,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "^6.23.0",
+    "compression-webpack-plugin": "^1.0.0-beta.0",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^3.0.0-beta.3",
     "graphql": "^0.10.3",
@@ -32,8 +33,9 @@
     "koa": "^2.3.0",
     "koa-bodyparser": "^4.2.0",
     "koa-router": "^7.2.1",
+    "koa-send": "^4.1.0",
     "material-ui": "next",
-    "node-fetch": "^1.7.1",
+    "node-fetch": "^2.0.0-alpha.5",
     "normalize.css": "^7.0.0",
     "npm-run-all": "^4.0.2",
     "react": "^15.6.1",
@@ -44,7 +46,7 @@
     "react-router-dom": "^4.1.1",
     "style-loader": "^0.18.2",
     "webpack": "^3.0.0",
-    "webpack-manifest-plugin": "^1.1.0",
+    "webpack-assets-manifest": "^0.7.0",
     "webpack-node-externals": "^1.6.0",
     "whatwg-fetch": "^2.0.3"
   },
@@ -58,7 +60,6 @@
     "eslint-plugin-jsx-a11y": "5.0.1",
     "eslint-plugin-react": "^7.1.0",
     "memory-fs": "^0.4.1",
-    "nodemon": "^1.11.0",
     "source-map-support": "^0.4.15"
   }
 }

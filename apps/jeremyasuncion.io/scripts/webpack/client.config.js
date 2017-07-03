@@ -1,10 +1,13 @@
+import CompressionPlugin from 'compression-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import webpack from 'webpack';
-import ManifestPlugin from 'webpack-manifest-plugin';
+import ManifestPlugin from 'webpack-assets-manifest';
 
 import common from './common.config';
 import { clientRule as babelRule } from './babel-loader.config';
 import { dev } from '../common';
+
+const COMPRESS_THRESHOLD_SIZE = 1024 * 10;
 
 export default {
   ...common,
@@ -42,8 +45,8 @@ export default {
     ],
   },
 
-  plugins: [
-    ...common.plugins,
+  plugins: [].concat(
+    common.plugins,
 
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
@@ -56,17 +59,17 @@ export default {
       name: 'manifest',
     }),
 
-
     new ManifestPlugin({
-      fileName: 'webpack-manifest.json',
+      output: 'webpack-manifest.json',
+      writeToDisk: !dev,
     }),
 
-    ...(dev ? [
-      new webpack.NamedModulesPlugin(),
-      new webpack.HotModuleReplacementPlugin(),
-    ] : [
+    dev ? [] : [
       new ExtractTextPlugin('[name].[contenthash].css'),
-    ]),
-  ],
+      new CompressionPlugin({
+        threshold: COMPRESS_THRESHOLD_SIZE,
+      }),
+    ],
+  ),
 };
 
