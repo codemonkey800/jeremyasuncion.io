@@ -1,4 +1,14 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 
-export default () => <h1>Hello, World!</h1>;
+export default function App() {
+  return (
+    <div>
+      <Helmet>
+        <title>Home - jeremyasuncion.io</title>
+      </Helmet>
+      <h1>hello world</h1>
+    </div>
+  );
+}
 

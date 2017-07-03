@@ -37,6 +37,11 @@ export default {
 
   plugins: [
     ...common.plugins,
+
+    new webpack.ProvidePlugin({
+      fetch: 'node-fetch',
+    }),
+
     ...(!dev ? [] : [
       new webpack.BannerPlugin({
         banner: 'require("source-map-support").install();',

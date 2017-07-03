@@ -11,6 +11,10 @@ module.exports = {
     'shared-node-browser': true,
   },
 
+  globals: {
+    fetch: true,
+  },
+
   rules: {
     'arrow-parens': [2, 'as-needed'],
     'react/jsx-filename-extension': 0,
