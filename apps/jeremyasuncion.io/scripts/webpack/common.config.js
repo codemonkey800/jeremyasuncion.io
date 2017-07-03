@@ -13,27 +13,29 @@ export default {
   },
 
   module: {
-    rules: [
-      {
-        loader: 'eslint-loader',
-        enforce: 'pre',
-        test: /\.js$/,
-        exclude: /node_modules/,
-        options: {
-          cacheDirectory: true,
+    rules: [].concat(
+      !dev ? [] : [
+        {
+          loader: 'eslint-loader',
+          enforce: 'pre',
+          test: /\.js$/,
+          exclude: /node_modules/,
+          options: {
+            cacheDirectory: true,
+          },
         },
-      },
-    ],
+      ],
+    ),
   },
 
-  plugins: [
+  plugins: [].concat(
     new webpack.NoEmitOnErrorsPlugin(),
 
     new webpack.EnvironmentPlugin({
       'process.env.NODE_ENV': JSON.stringify(dev ? 'development' : 'production'),
     }),
 
-    ...(dev ? [] : [
+    dev ? [] : [
       new webpack.optimize.UglifyJsPlugin({
         comments: false,
       }),
@@ -41,7 +43,7 @@ export default {
         debug: false,
         minimize: true,
       }),
-    ]),
-  ],
+    ],
+  ),
 };
 

@@ -12,7 +12,13 @@ function main() {
     console.log(stats.toString({ colors: true }));
     if (!watcherStarted) {
       watcherStarted = true;
-      nodemon(resolve('dist/server.js'));
+      nodemon({
+        script: resolve('dist/server.js'),
+        watch: [
+          resolve('dist/server.js'),
+          resolve('dist/*.server.js'),
+        ],
+      });
       nodemon.on('quit', () => process.exit());
     }
   });

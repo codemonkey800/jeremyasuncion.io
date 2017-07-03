@@ -10,10 +10,13 @@ export default {
   ...common,
 
   entry: {
-    client: [
+    client: [].concat(
+      'normalize.css',
+      'babel-polyfill',
+      'whatwg-fetch',
       'react-hot-loader/patch',
       './src/client/index.js',
-    ],
+    ),
   },
 
   output: {
