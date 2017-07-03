@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import React from 'react';
 import Helmet from 'react-helmet';
 import { MuiThemeProvider } from 'material-ui';
@@ -7,20 +5,30 @@ import {
   renderToStaticMarkup,
   renderToString,
 } from 'react-dom/server';
+import { StaticRouter } from 'react-router';
 
-import AppRouter from './app-router';
-import HTMLPage from './html-page';
+import HTMLPage from './components/html-page';
+
+import App from '../shared/app';
 import { createStyleManager } from '../shared/theme';
 
-export function renderPage(ctx) {
+/**
+  * Koa middleware that handles data fetching, client hydration, and server side
+  * rendering.
+  *
+  * @param ctx A Koa context object.
+  */
+export default function renderPage(ctx) {
   const { styleManager, theme } = createStyleManager();
 
   const context = {};
-  const appStyles = styleManager.sheetsToString();
+  const appCss = styleManager.sheetsToString();
   const appHtml = renderToString((
-    <MuiThemeProvider styleManager={styleManager} theme={theme}>
-      <AppRouter context={context} location={ctx.url} />
-    </MuiThemeProvider>
+    <StaticRouter context={context} location={ctx.url}>
+      <MuiThemeProvider styleManager={styleManager} theme={theme}>
+        <App />
+      </MuiThemeProvider>
+    </StaticRouter>
   ));
 
   if (context.url) {
@@ -29,6 +37,7 @@ export function renderPage(ctx) {
     const helmet = Helmet.renderStatic();
     const html = renderToStaticMarkup((
       <HTMLPage
+        appCss={appCss}
         appHtml={appHtml}
         helmet={helmet}
       />
