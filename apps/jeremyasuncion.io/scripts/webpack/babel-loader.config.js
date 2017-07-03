@@ -30,11 +30,10 @@ export const clientRule = {
     ...common.options,
     presets: [
       ['env', {
-        targets: {
-          browsers: 'last 3 versions',
-          uglify: true,
-        },
-        useBuiltIns: true,
+        forceAllTransforms: true,
+        modules: false,
+        targets: { browsers: 'last 3 versions' },
+        useBuiltIns: 'usage',
       }],
       ...common.options.presets,
     ],
@@ -52,11 +51,10 @@ export const serverRule = {
     ...common.options,
     presets: [
       ['env', {
-        targets: {
-          node: true,
-          uglify: true,
-        },
-        useBuiltIns: true,
+        forceAllTransforms: true,
+        modules: false,
+        targets: { node: true },
+        useBuiltIns: 'usage',
       }],
       ...common.options.presets,
     ],
