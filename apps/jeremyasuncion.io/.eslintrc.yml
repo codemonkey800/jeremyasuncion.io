@@ -1,0 +1,11 @@
+root: true
+
+extends: codemonkey800-vue
+
+globals:
+  fetch: true
+
+env:
+  commonjs: true
+  es6: true
+  shared-node-browser: true
