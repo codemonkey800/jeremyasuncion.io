@@ -10,7 +10,7 @@
   "dependencies": {},
   "devDependencies": {
     "eslint": "^3.19.0",
-    "eslint-config-codemonkey800-vue": "^0.3.0",
+    "eslint-config-codemonkey800-react": "^0.3.1",
     "eslint-loader": "^1.9.0",
     "source-map-support": "^0.4.15"
   }

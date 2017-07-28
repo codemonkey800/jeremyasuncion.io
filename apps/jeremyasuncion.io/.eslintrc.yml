@@ -1,6 +1,6 @@
 root: true
 
-extends: codemonkey800-vue
+extends: codemonkey800-react
 
 globals:
   fetch: true
