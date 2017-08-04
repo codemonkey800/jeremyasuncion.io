@@ -1,0 +1,42 @@
+doctype html
+html(lang='en')
+  head
+    title jeremyasuncion.io
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width,initial-scale=1')
+    link(rel='stylesheet' href='/index.css')
+    link(
+      rel='stylesheet'
+      href='https://unpkg.com/material-components-web@0.16.0/dist/material-components-web.min.css'
+    )
+  body
+    main
+      .typed.before-buttons
+        .text
+        .cursor |
+      .button-row.hidden
+        a.mdc-button(
+          data-mdc-auto-init='MDCRipple'
+          href='/resume.pdf'
+          target='_blank'
+        ) Resume
+        a.mdc-button(
+          data-mdc-auto-init='MDCRipple'
+          href='https://github.com/codemonkey800'
+          target='_blank'
+        ) GitHub
+        a.mdc-button(
+          data-mdc-auto-init='MDCRipple'
+          href='https://www.linkedin.com/in/jeremyasuncion'
+          target='_blank'
+        ) Linkedin
+        a.mdc-button(
+          data-mdc-auto-init='MDCRipple'
+          href='https://www.youtube.com/playlist?list=FLnq-glg1nJ_qb9Rm5QTZfqw'
+          target='_blank'
+        ) YouTube Favorite Playlist
+
+    script(src='/reload/reload.js')
+    script(src='https://unpkg.com/material-components-web@0.16.0/dist/material-components-web.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js')
+    script(src='/index.js')

@@ -1,11 +1,13 @@
 root: true
 
-extends: codemonkey800-react
+extends: codemonkey800
 
 globals:
-  fetch: true
+  mdc: true
+  Typed: true
 
-env:
-  commonjs: true
-  es6: true
-  shared-node-browser: true
+rules:
+  global-require: 0
+  no-console: 0
+  no-new: 0
+  import/no-extraneous-dependencies: 0
