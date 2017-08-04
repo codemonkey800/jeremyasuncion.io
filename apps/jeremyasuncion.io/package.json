@@ -4,6 +4,7 @@
   "description": "My personal website :)",
   "license": "MIT",
   "scripts": {
+    "lint": "eslint .",
     "start": "node ."
   },
   "dependencies": {
