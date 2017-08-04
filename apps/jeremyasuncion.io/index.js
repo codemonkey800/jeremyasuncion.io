@@ -7,6 +7,7 @@ const port = parseInt(process.env.PORT, 10) || 8080;
 
 app.set('view engine', 'pug');
 app.set('views', 'public');
+app.locals.NODE_ENV = process.env.NODE_ENV || 'development';
 
 if (process.env.NODE_ENV !== 'production') {
   const chokidar = require('chokidar');
