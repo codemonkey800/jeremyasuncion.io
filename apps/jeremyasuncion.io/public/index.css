@@ -23,13 +23,27 @@ html,body, main {
 main {
   align-items: center;
   flex-direction: column;
-  font-size: 5vw;
+  font-size: 10vw;
   justify-content: center;
 }
 
 button.mdc-button,
 a.mdc-button {
   color: #fff;
+}
+
+.button-row {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex: initial;
+  justify-content: center;
+  transition: all 375ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.button-row.hidden {
+  opacity: 0;
+  transform: translateY(10%);
 }
 
 .typed {
@@ -39,20 +53,25 @@ a.mdc-button {
 }
 
 .typed.before-buttons {
-  transform: translateY(50%);
+  transform: translateY(30%);
 }
 
 .cursor {
   animation: cursor-blink 600ms ease-in-out infinite;
 }
 
-.button-row {
-  transition: all 375ms cubic-bezier(0, 0, 0.2, 1);
+@media (min-width: 700px) {
+  .button-row {
+    flex-direction: row;
+  }
+  .typed {
+    margin-bottom: 50px;
+  }
 }
-
-.button-row.hidden {
-  opacity: 0;
-  transform: translateY(10%);
+@media (min-width: 1100px) {
+  main {
+    font-size: 6vw;
+  }
 }
 
 @keyframes cursor-blink {
