@@ -36,7 +36,9 @@ html(lang='en')
           target='_blank'
         ) YouTube Favorite Playlist
 
-    unless NODE_ENV === 'production'
+    if NODE_ENV === 'production'
+      script(src='/analytics.js')
+    else
       script(src='/reload/reload.js')
     script(src='https://unpkg.com/material-components-web@0.16.0/dist/material-components-web.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js')
