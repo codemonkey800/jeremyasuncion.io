@@ -7,7 +7,7 @@
   const additionalStrings = [
     'Software Engineer',
     'Web Developer',
-    'Google Intern',
+    'SJSU Student',
   ];
   const lastLoadedTime = parseInt(localStorage.getItem('lastLoaded'), 10) || 0;
   const lastLoaded = new Date(lastLoadedTime);
