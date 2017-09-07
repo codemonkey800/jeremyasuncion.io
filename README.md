@@ -20,8 +20,10 @@ subject to change:
 ## What's included?
 
 ```
-services/ # Common services used across applications.
-  storage # S3-like storage backend.
+apps/               # Applications and stuff
+  jeremyasuncion.io   # Personal website/Root site
+services/           # Common services used across applications.
+  storage             # S3-like storage backend.
 ```
 
 ## Why not Firebase/AWS/Heroku/etc.
@@ -53,4 +55,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
