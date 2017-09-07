@@ -1,6 +1,6 @@
 {
   "name": "jeremyasuncion.io",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "My personal website :)",
   "license": "MIT",
   "scripts": {
@@ -10,12 +10,12 @@
   "dependencies": {
     "compression": "^1.7.0",
     "express": "^5.0.0-alpha.5",
-    "pug": "^2.0.0-rc.3"
+    "pug": "^2.0.0-rc.4"
   },
   "devDependencies": {
     "chokidar": "^1.7.0",
-    "eslint": "^3.19.0",
-    "eslint-config-codemonkey800": "^0.4.0",
+    "eslint": "^4.6.1",
+    "eslint-config-codemonkey800": "^0.5.0",
     "reload": "^2.2.2"
   }
 }
