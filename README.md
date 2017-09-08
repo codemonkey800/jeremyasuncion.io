@@ -32,6 +32,20 @@ I admit, handling all the infrastructure is tedious. But it's also a lot of
 fun. I'm sure at whatever company I work at, they'll have their own workflow
 for deploying applications. This is mine and it's been a really fun experience.
 
+## Deployment
+
+Dokku uses git pushes for deploying applications. For my monorepo setup, we use
+`git-subtree` to deploy applications or services given the multi-application directory structure.
+
+Here's an example of deploying my main website and the storage service:
+
+```sh
+$ git subtree push --prefix=apps/jeremyasuncion.io dokku@jeremyasuncion.io:jeremyasuncion.io master
+...
+$ git subtree push --prefix=services/storage dokku@jeremyasuncion.io:storage master
+...
+```
+
 ## License
 
 The MIT License (MIT)
