@@ -23,6 +23,7 @@ subject to change:
 apps/               # Applications and stuff
   jeremyasuncion.io   # Personal website/Root site
 services/           # Common services used across applications.
+  static              # Nginx static file hosting
   storage             # S3-like storage backend.
 ```
 
