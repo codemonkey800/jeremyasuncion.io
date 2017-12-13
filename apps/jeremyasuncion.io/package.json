@@ -1,8 +1,12 @@
 {
   "name": "jeremyasuncion.io",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "My personal website :)",
   "license": "MIT",
+  "engines": {
+    "node": "9.3.x",
+    "yarn": "1.3.x"
+  },
   "scripts": {
     "lint": "eslint .",
     "start": "node ."
