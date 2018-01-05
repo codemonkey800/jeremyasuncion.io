@@ -7,7 +7,7 @@ html(lang='en')
     link(rel='stylesheet' href='/index.css')
     link(
       rel='stylesheet'
-      href='https://unpkg.com/material-components-web@0.16.0/dist/material-components-web.min.css'
+      href='https://unpkg.com/material-components-web@0.27.0/dist/material-components-web.min.css'
     )
   body
     main
@@ -32,7 +32,7 @@ html(lang='en')
         ) Linkedin
 
     if NODE_ENV === 'production'
-      script(src='/analytics.js')
+      include _analytics.pug
     else
       script(src='/reload/reload.js')
     script(src='https://unpkg.com/material-components-web@0.27.0/dist/material-components-web.min.js')

@@ -1,0 +1,6 @@
+globals:
+  mdc: true
+  Typed: true
+
+env:
+  browser: true
