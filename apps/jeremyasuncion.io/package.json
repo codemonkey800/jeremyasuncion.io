@@ -1,6 +1,6 @@
 {
   "name": "jeremyasuncion.io",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "My personal website :)",
   "license": "MIT",
   "engines": {
@@ -17,9 +17,10 @@
     "pug": "^2.0.0-rc.4"
   },
   "devDependencies": {
-    "chokidar": "^1.7.0",
-    "eslint": "^4.13.1",
-    "eslint-config-codemonkey800": "^0.5.6",
+    "chokidar": "^2.0.0",
+    "eslint": "^4.14.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
     "reload": "^2.2.2"
   }
 }

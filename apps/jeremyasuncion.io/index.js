@@ -21,7 +21,6 @@ if (process.env.NODE_ENV !== 'production') {
 }
 app.use(compression());
 app.use(express.static('public'));
-app.use(express.static('/data'));
 app.use((_, res) => res.render('index'));
 
 app.listen(port, host, () => {

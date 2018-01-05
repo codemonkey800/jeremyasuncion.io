@@ -27,9 +27,8 @@ main {
   justify-content: center;
 }
 
-button.mdc-button,
-a.mdc-button {
-  color: #fff;
+.mdc-button {
+  color: #fff !important;
 }
 
 .button-row {
