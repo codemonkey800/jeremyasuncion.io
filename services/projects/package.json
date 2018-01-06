@@ -1,8 +1,7 @@
 {
-  "name": "demos",
+  "name": "projects",
   "version": "0.1.0",
-  "description": "Demos subdomain reverse proxy service.",
-  "main": "index.js",
+  "description": "Projects sub-domain reverse proxy service.",
   "license": "MIT",
   "engines": {
     "node": "9.3.x",
@@ -10,8 +9,8 @@
   },
   "scripts": {
     "build": "babel -d dist src",
-    "lint": "eslint .",
-    "start": "node ."
+    "dev": "babel-node src",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0-beta.36",
