@@ -5,5 +5,8 @@ module.exports = {
     }],
     '@babel/preset-stage-0',
   ],
-  plugins: ['@babel/plugin-transform-runtime'],
+  plugins: [
+    '@babel/plugin-transform-runtime',
+    'dynamic-import-node',
+  ],
 };
