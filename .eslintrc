@@ -27,6 +27,7 @@
   },
 
   "rules": {
+    "quote-props": ["error", "consistent-as-needed"],
     "@typescript-eslint/semi": ["error", "never"],
     "@typescript-eslint/member-delimiter-style": ["error", {
       "multiline": {
