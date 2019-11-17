@@ -1,6 +1,6 @@
 import { ServerStyleSheets } from '@material-ui/styles'
 import { APP_HEAD } from 'germy/constants'
-import theme from 'germy/theme'
+import { theme } from 'germy/theme'
 import { getViewportString } from 'germy/utils'
 import Document, {
   DocumentContext,

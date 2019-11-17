@@ -1,3 +1,3 @@
-export { default as AppShell } from 'germy/components/AppShell'
-export { default as ButtonRow } from 'germy/components/ButtonRow'
-export { default as TypingHeader } from 'germy/components/TypingHeader'
+export * from 'germy/components/AppShell'
+export * from 'germy/components/ButtonRow'
+export * from 'germy/components/TypingHeader'

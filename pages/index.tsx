@@ -9,7 +9,10 @@ const Home: FunctionComponent = () => {
 
   return (
     <>
-      <TypingHeader setIsTypingComplete={setIsTypingComplete} />
+      <TypingHeader
+        isTypingComplete={isTypingComplete}
+        setIsTypingComplete={setIsTypingComplete}
+      />
       <ButtonRow isTypingComplete={isTypingComplete} />
     </>
   )

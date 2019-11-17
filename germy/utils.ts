@@ -1,7 +1,7 @@
 import { makeStyles as muiMakeStyles } from '@material-ui/styles'
 import { Styles } from '@material-ui/styles/withStyles'
 import { StylesHook } from '@material-ui/styles/makeStyles'
-import theme from 'germy/theme'
+import { theme } from 'germy/theme'
 import { ViewportOptions } from 'germy/types'
 
 const FIRST_CAPITAL_CHAR_CODE = 'A'.charCodeAt(0)

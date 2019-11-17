@@ -1,7 +1,7 @@
 import { createMuiTheme } from '@material-ui/core'
 import { grey, purple } from '@material-ui/core/colors'
 
-const theme = createMuiTheme({
+export const theme = createMuiTheme({
   palette: {
     primary: grey,
     secondary: purple,
@@ -9,4 +9,10 @@ const theme = createMuiTheme({
   },
 })
 
-export default theme
+export const defaultTransition = theme.transitions.create(
+  'all',
+  {
+    duration: theme.transitions.duration.complex,
+    easing: theme.transitions.easing.easeInOut,
+  },
+)

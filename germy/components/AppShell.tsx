@@ -34,7 +34,7 @@ const useStyles = makeStyles({
   },
 })
 
-const AppShell: FunctionComponent<Props> = ({ children }) => {
+export const AppShell: FunctionComponent<Props> = ({ children }) => {
   const styles = useStyles()
 
   return (
@@ -51,5 +51,3 @@ AppShell.propTypes = {
 AppShell.defaultProps = {
   children: null,
 }
-
-export default AppShell

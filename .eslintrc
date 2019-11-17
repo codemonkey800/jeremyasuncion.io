@@ -30,14 +30,18 @@
     "arrow-parens": ["error", "as-needed"],
     "quote-props": ["error", "as-needed"],
 
-    "@typescript-eslint/semi": ["error", "never"],
+    "@typescript-eslint/explicit-function-return-type": ["error", {
+      "allowExpressions": true
+    }],
     "@typescript-eslint/member-delimiter-style": ["error", {
       "multiline": {
         "delimiter": "none"
       }
     }],
+    "@typescript-eslint/semi": ["error", "never"],
 
-    "import/no-default-export": ["error"],
+    "import/no-default-export": "error",
+    "import/prefer-default-export": "off",
 
     "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off"
