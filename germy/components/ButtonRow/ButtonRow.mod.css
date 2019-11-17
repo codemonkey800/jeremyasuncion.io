@@ -1,0 +1,13 @@
+@import '~germy/core.mod.css';
+
+.buttonRow {
+  align-items: center;
+  display: flex;
+  flex: initial;
+  justify-content: center;
+}
+
+.button {
+  margin-left: var(--gap8dp) !important;
+  margin-right: var(--gap8dp) !important;
+}

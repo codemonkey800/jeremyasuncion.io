@@ -1,13 +1,9 @@
-import {
-  Button,
-  Typography as Text,
-} from '@material-ui/core'
+import { ButtonRow } from 'germy/components'
 import { FunctionComponent } from 'react'
 
 const Home: FunctionComponent = () => (
   <>
-    <Text>Hello, World!</Text>
-    <Button>Derp</Button>
+    <ButtonRow />
   </>
 )
 

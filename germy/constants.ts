@@ -1,3 +1,5 @@
+import { ButtonRowConfig } from 'germy/types'
+
 export const APP_HEAD = {
   AUTHOR: 'Jeremy Asuncion',
   DESCRIPTION: 'Home page of the software engineer, Jeremy Asuncion.',
@@ -13,15 +15,24 @@ export const APP_HEAD = {
 
 export const JSS_SERVER_STYLES_ID = '#jss-server-side'
 
-export const BUTTON_ROW = {
-  GITHUB: 'GitHub',
-  LINKEDIN: 'LinkedIn',
-  RESUME: 'resume',
+export const BUTTON_ROW: ButtonRowConfig = {
+  GITHUB: {
+    TITLE: 'GitHub',
+    LINK: 'https://github.com/codemonkey800',
+  },
+  LINKEDIN: {
+    TITLE: 'LinkedIn',
+    LINK: 'https://www.linkedin.com/in/jeremyasuncion',
+  },
+  RESUME: {
+    TITLE: 'Resume',
+    LINK: 'https://github.com/codemonkey800/dotfiles/blob/master/resume.pdf',
+  },
 }
 
 export const TYPED_HEADERS = [
   'Software Engineer II',
-  'SJSU Alumni',
   'Sumo',
+  'SJSU Alumnus',
   'Steak Enthusiast',
 ]

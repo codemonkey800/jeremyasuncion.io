@@ -1,5 +1,5 @@
 import { ServerStyleSheets } from '@material-ui/styles'
-import { APP_HEAD } from 'germy/strings'
+import { APP_HEAD } from 'germy/constants'
 import theme from 'germy/theme'
 import { getViewportString } from 'germy/utils'
 import Document, {
@@ -9,7 +9,13 @@ import Document, {
   Main,
   NextScript,
 } from 'next/document'
-import { Children, ReactElement } from 'react'
+import {
+  AppPropsType,
+  AppType,
+  Enhancer,
+  RenderPage,
+} from 'next/dist/next-server/lib/utils'
+import { Children, FunctionComponent, ReactElement } from 'react'
 
 const VIEWPORT_STRING = getViewportString(APP_HEAD.VIEWPORT)
 
@@ -18,9 +24,14 @@ export default class GermyDocument extends Document {
     const sheets = new ServerStyleSheets()
     const { renderPage } = ctx
 
-    ctx.renderPage = () => renderPage({
-      enhanceApp: App => props => sheets.collect(<App {...props} />),
-    })
+    const enhanceApp: Enhancer<AppType> = App => {
+      const AppWrapper: FunctionComponent<AppPropsType> = props => (
+        sheets.collect(<App {...props} />)
+      )
+      return AppWrapper
+    }
+
+    ctx.renderPage = (): ReturnType<RenderPage> => renderPage({ enhanceApp })
 
     const initialProps = await Document.getInitialProps(ctx)
     return {
@@ -28,7 +39,7 @@ export default class GermyDocument extends Document {
       styles: [
         ...Children.toArray(initialProps.styles),
         sheets.getStyleElement(),
-      ]
+      ],
     }
   }
 

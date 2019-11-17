@@ -5,7 +5,7 @@ export const dummy = 1
 const FIRST_CAPITAL_CHAR_CODE = 'A'.charCodeAt(0)
 const LAST_CAPITAL_CHAR_CODE = 'Z'.charCodeAt(0)
 
-function isCapital(character: string) {
+const isCapital = (character: string): boolean => {
   const charCode = character.charCodeAt(0)
   return (
     charCode >= FIRST_CAPITAL_CHAR_CODE
@@ -13,7 +13,7 @@ function isCapital(character: string) {
   )
 }
 
-function findIndexOfFirstCapital(value: string): number {
+const findIndexOfFirstCapital = (value: string): number => {
   for (let i = 0; i < value.length; i++) {
     if (isCapital(value[i])) {
       return i
@@ -23,15 +23,14 @@ function findIndexOfFirstCapital(value: string): number {
   return -1
 }
 
-function camelCaseToSnakeCase(value: string): string {
+const camelCaseToSnakeCase = (value: string): string => {
   let result = value
   let nextDashIndex: number
 
   do {
     nextDashIndex = findIndexOfFirstCapital(result)
     if (nextDashIndex >= 0) {
-      result =
-        result.substring(0, nextDashIndex)
+      result = result.substring(0, nextDashIndex)
         + result.substr(nextDashIndex + 1, 1)
         + result.substring(nextDashIndex + 2)
     }
@@ -40,9 +39,7 @@ function camelCaseToSnakeCase(value: string): string {
   return result
 }
 
-export function getViewportString(options: ViewportOptions): string {
-  return Object
-    .entries(options)
-    .map(([key, val]) => `${camelCaseToSnakeCase(key)}=${val}`)
-    .join(',')
-}
+export const getViewportString = (options: ViewportOptions): string => Object
+  .entries(options)
+  .map(([key, val]) => `${camelCaseToSnakeCase(key)}=${val}`)
+  .join(',')

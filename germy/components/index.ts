@@ -1,2 +1,2 @@
 export { default as AppShell } from 'germy/components/AppShell'
-export const dummy = 1
+export { default as ButtonRow } from 'germy/components/ButtonRow'

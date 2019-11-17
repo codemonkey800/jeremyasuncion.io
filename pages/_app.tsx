@@ -3,7 +3,7 @@
 import { CssBaseline } from '@material-ui/core'
 import { ThemeProvider } from '@material-ui/styles'
 import { AppShell } from 'germy/components'
-import { APP_HEAD, JSS_SERVER_STYLES_ID } from 'germy/strings'
+import { APP_HEAD, JSS_SERVER_STYLES_ID } from 'germy/constants'
 import theme from 'germy/theme'
 import App from 'next/app'
 import Head from 'next/head'

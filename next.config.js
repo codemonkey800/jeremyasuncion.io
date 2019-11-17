@@ -7,6 +7,13 @@ module.exports = withCSS({
     camelCase: true,
     namedExport: true,
   },
+  postcssLoaderOptions: {
+    parser: true,
+    plugins: {
+      'postcss-import': {},
+      'postcss-css-variables': {},
+    },
+  },
 
   webpack(config, options) {
     if (!options.isServer) {
