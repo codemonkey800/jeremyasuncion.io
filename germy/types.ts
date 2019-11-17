@@ -8,5 +8,4 @@ interface ButtonRowItem {
 export type ButtonRowConfig = {
   [key in ButtonRowKey]: ButtonRowItem
 }
-
 export type ViewportOptions = Record<string, boolean | number | string>

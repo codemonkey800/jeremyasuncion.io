@@ -1,7 +1,5 @@
 import { ViewportOptions } from 'germy/types'
 
-export const dummy = 1
-
 const FIRST_CAPITAL_CHAR_CODE = 'A'.charCodeAt(0)
 const LAST_CAPITAL_CHAR_CODE = 'Z'.charCodeAt(0)
 
@@ -43,3 +41,5 @@ export const getViewportString = (options: ViewportOptions): string => Object
   .entries(options)
   .map(([key, val]) => `${camelCaseToSnakeCase(key)}=${val}`)
   .join(',')
+
+export const dummy = 1
