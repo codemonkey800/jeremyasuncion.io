@@ -9,7 +9,7 @@ export const APP_HEAD = {
     'initial-scale': 1,
     'minimum-scale': 1,
     'shrink-to-fit': 'no',
-    'width': 'device-width',
+    width: 'device-width',
   },
 }
 

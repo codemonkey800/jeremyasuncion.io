@@ -28,13 +28,17 @@
   "rules": {
     "no-plusplus": "off",
     "arrow-parens": ["error", "as-needed"],
-    "quote-props": ["error", "consistent-as-needed"],
+    "quote-props": ["error", "as-needed"],
+
     "@typescript-eslint/semi": ["error", "never"],
     "@typescript-eslint/member-delimiter-style": ["error", {
       "multiline": {
         "delimiter": "none"
       }
     }],
+
+    "import/no-default-export": ["error"],
+
     "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off"
   }

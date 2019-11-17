@@ -1,3 +1,7 @@
+import { makeStyles as muiMakeStyles } from '@material-ui/styles'
+import { Styles } from '@material-ui/styles/withStyles'
+import { StylesHook } from '@material-ui/styles/makeStyles'
+import theme from 'germy/theme'
 import { ViewportOptions } from 'germy/types'
 
 const FIRST_CAPITAL_CHAR_CODE = 'A'.charCodeAt(0)
@@ -42,4 +46,6 @@ export const getViewportString = (options: ViewportOptions): string => Object
   .map(([key, val]) => `${camelCaseToSnakeCase(key)}=${val}`)
   .join(',')
 
-export const dummy = 1
+export const makeStyles = <P extends {} = {}, T = typeof theme>(
+  styles: Styles<T, P>,
+): StylesHook<Styles<T, P>> => muiMakeStyles(styles)

@@ -1,33 +1,10 @@
-const withCSS = require('@zeit/next-css')
 const TsconfigPathsplugin = require('tsconfig-paths-webpack-plugin')
 
-module.exports = withCSS({
-  cssModules: true,
-  cssLoaderOptions: {
-    camelCase: true,
-    namedExport: true,
-  },
-  postcssLoaderOptions: {
-    parser: true,
-    plugins: {
-      'postcss-import': {},
-      'postcss-css-variables': {},
-    },
-  },
-
-  webpack(config, options) {
-    if (!options.isServer) {
-      const cssLoader = options.defaultLoaders.css.find(
-        entry => entry.loader === 'css-loader',
-      )
-      if (cssLoader) {
-        cssLoader.loader = 'typings-for-css-modules-loader'
-      }
-    }
-
+module.exports = {
+  webpack(config) {
     config.resolve.plugins = config.resolve.plugins || []
     config.resolve.plugins.push(new TsconfigPathsplugin())
 
     return config
   },
-})
+}
