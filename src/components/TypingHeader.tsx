@@ -3,7 +3,7 @@ import { APP_HEAD, TYPED_HEADERS } from 'germy/constants'
 import { useLocalStorage } from 'germy/hooks'
 import { theme } from 'germy/theme'
 import { makeStyles } from 'germy/utils'
-import {
+import React, {
   Dispatch,
   FunctionComponent,
   SetStateAction,

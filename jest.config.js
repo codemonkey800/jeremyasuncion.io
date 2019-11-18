@@ -1,11 +1,11 @@
 module.exports = {
-  collectCoverage: false,
+  preset: 'ts-jest',
   moduleNameMapper: {
     '\\.css$': 'identity-obj-proxy',
-    'germy/(.*)$': '<rootDir>/germy/$1',
+    '^germy/(.*)$': '<rootDir>/src/$1',
   },
-  moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
-  testPathIgnorePatterns: ["<rootDir>/.next/", "<rootDir>/node_modules/"],
+  moduleFileExtensions: ["js", "ts", "tsx"],
+  testPathIgnorePatterns: ["<rootDir>/node_modules/"],
   testRegex: "\\.test\\.tsx?$",
   transform: {
     "^.+\\.tsx?$": "ts-jest"

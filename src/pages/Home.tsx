@@ -6,14 +6,14 @@ import {
   initAnalytics,
   logPageView,
 } from 'germy/utils'
-import {
+import React, {
   FunctionComponent,
   useEffect,
   useRef,
   useState,
 } from 'react'
 
-const Home: FunctionComponent = () => {
+export const Home: FunctionComponent = () => {
   const [isTypingComplete, setIsTypingComplete] = useState(false)
   const isGaInitializedRef = useRef(false)
 
@@ -35,5 +35,3 @@ const Home: FunctionComponent = () => {
     </>
   )
 }
-
-export default Home

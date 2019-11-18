@@ -13,8 +13,6 @@ export const APP_HEAD = {
   },
 }
 
-export const JSS_SERVER_STYLES_ID = '#jss-server-side'
-
 export const BUTTON_ROW: ButtonRowConfig = {
   GITHUB: {
     TITLE: 'GitHub',
@@ -30,14 +28,13 @@ export const BUTTON_ROW: ButtonRowConfig = {
   },
 }
 
+export const IS_PROD = process.env.NODE_ENV === 'production'
+
+export const IS_DEV = process.env.NODE_ENV === 'development'
+
 export const TYPED_HEADERS = [
   'Software Engineer II',
   'Sumo',
   'SJSU Alumnus',
   'Steak Enthusiast',
 ]
-
-export const IS_PROD = process.env.NODE_ENV === 'production'
-export const IS_DEV = process.env.NODE_ENV === 'development'
-
-export const IS_BROWSER = process.browser

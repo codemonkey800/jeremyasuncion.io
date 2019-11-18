@@ -1,4 +1,3 @@
-import { IS_BROWSER } from 'germy/constants'
 import {
   Dispatch,
   SetStateAction,
@@ -10,7 +9,7 @@ export const useLocalStorage = <T>(
   initialValue: T,
 ): [T, Dispatch<SetStateAction<T>>] => {
   const [value, setValue] = useState<T>(() => {
-    if (IS_BROWSER) {
+    if (window.localStorage) {
       const item = window.localStorage.getItem(key)
       return item ? JSON.parse(item) : initialValue
     }
@@ -19,7 +18,7 @@ export const useLocalStorage = <T>(
   })
 
   const setStoredValue = (valueOrFunction: SetStateAction<T>): void => {
-    if (IS_BROWSER) {
+    if (window.localStorage) {
       const storedValue = valueOrFunction instanceof Function
         ? valueOrFunction(value)
         : valueOrFunction

@@ -12,7 +12,7 @@ import {
   makeStyles,
 } from 'germy/utils'
 import { bool } from 'prop-types'
-import { FunctionComponent } from 'react'
+import React, { FunctionComponent } from 'react'
 
 const buttonKeys = Object.keys(BUTTON_ROW) as ButtonRowKey[]
 
