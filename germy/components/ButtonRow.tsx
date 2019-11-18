@@ -7,7 +7,10 @@ import {
   theme,
 } from 'germy/theme'
 import { ButtonRowKey } from 'germy/types'
-import { makeStyles } from 'germy/utils'
+import {
+  logOpenedLink,
+  makeStyles,
+} from 'germy/utils'
 import { bool } from 'prop-types'
 import { FunctionComponent } from 'react'
 
@@ -49,7 +52,9 @@ const ButtonRow: FunctionComponent<Props> = ({ isTypingComplete }) => {
           classes={{ root: styles.button }}
           key={key}
           onClick={() => {
-            window.location.href = BUTTON_ROW[key].LINK
+            const href = BUTTON_ROW[key].LINK
+            logOpenedLink(href)
+            window.location.href = href
           }}
         >
           {BUTTON_ROW[key].TITLE}

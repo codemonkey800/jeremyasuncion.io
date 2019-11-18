@@ -1,8 +1,13 @@
 import { makeStyles as muiMakeStyles } from '@material-ui/styles'
 import { Styles } from '@material-ui/styles/withStyles'
 import { StylesHook } from '@material-ui/styles/makeStyles'
+import {
+  IS_BROWSER,
+  IS_PROD,
+} from 'germy/constants'
 import { theme } from 'germy/theme'
 import { ViewportOptions } from 'germy/types'
+import ReactGA from 'react-ga'
 
 const FIRST_CAPITAL_CHAR_CODE = 'A'.charCodeAt(0)
 const LAST_CAPITAL_CHAR_CODE = 'Z'.charCodeAt(0)
@@ -49,3 +54,22 @@ export const getViewportString = (options: ViewportOptions): string => Object
 export const makeStyles = <P extends {} = {}, T = typeof theme>(
   styles: Styles<T, P>,
 ): StylesHook<Styles<T, P>> => muiMakeStyles(styles)
+
+export const initAnalytics = (): void => {
+  if (IS_BROWSER && IS_PROD) {
+    ReactGA.initialize(process.env.GA_TRACKING_ID || '')
+  }
+}
+
+export const logPageView = (): void => {
+  if (IS_BROWSER && IS_PROD) {
+    const { pathname } = window.location
+    ReactGA.set({ page: pathname })
+    ReactGA.pageview(pathname)
+  }
+}
+
+export const logOpenedLink = (href: string): void => ReactGA.outboundLink(
+  { label: href },
+  () => {},
+)

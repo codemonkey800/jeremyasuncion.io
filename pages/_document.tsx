@@ -43,6 +43,9 @@ export default class GermyDocument extends Document {
     }
   }
 
+  componentDidMount(): void {
+  }
+
   render(): ReactElement {
     return (
       <html lang="en">
