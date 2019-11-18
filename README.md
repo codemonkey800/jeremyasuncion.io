@@ -1,7 +1,7 @@
 # jeremyasuncion.io
 
-My personal website. Made with [Next.js](https://github.com/zeit/next.js/)
-and hosted on [Now](https://zeit.co/home).
+My personal website. Made with [React.js](https://reactjs.org/) and hosted on
+[Netlify](https://www.netlify.com/).
 
 ## License
 
