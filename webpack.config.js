@@ -71,6 +71,7 @@ const config = {
 
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'development',
+      GA_TRACKING_ID: '',
     }),
   ],
 }
