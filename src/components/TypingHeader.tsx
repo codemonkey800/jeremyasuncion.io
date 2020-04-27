@@ -21,17 +21,17 @@ const useStyles = makeStyles<Props>({
   header: {
     fontSize: '8vw',
     transition: getTransition('transform'),
-    transform: props => `translateY(${
-      props.isTypingComplete
-        ? 0
-        : theme.spacing(6)
-    }px)`,
+    transform: props =>
+      `translateY(${props.isTypingComplete ? 0 : theme.spacing(6)}px)`,
   },
 })
 
 export const TypingHeader: FunctionComponent<Props> = props => {
   const styles = useStyles(props)
-  const [lastVisitedTime, setLastVisitedTime] = useLocalStorage('lastVisitedTime', 0)
+  const [lastVisitedTime, setLastVisitedTime] = useLocalStorage(
+    'lastVisitedTime',
+    0,
+  )
   const [hasAllStrings, setHasAllStrings] = useState(false)
 
   useEffect(() => {
@@ -39,17 +39,13 @@ export const TypingHeader: FunctionComponent<Props> = props => {
     const now = new Date()
 
     if (
-      now.getFullYear() > lastVisited.getFullYear()
-      || now.getMonth() > lastVisited.getMonth()
+      now.getFullYear() > lastVisited.getFullYear() ||
+      now.getMonth() > lastVisited.getMonth()
     ) {
       setLastVisitedTime(Date.now())
       setHasAllStrings(true)
     }
-  }, [
-    lastVisitedTime,
-    setHasAllStrings,
-    setLastVisitedTime,
-  ])
+  }, [lastVisitedTime, setHasAllStrings, setLastVisitedTime])
 
   const strings = hasAllStrings
     ? TYPED_HEADERS.concat(APP_HEAD.AUTHOR)

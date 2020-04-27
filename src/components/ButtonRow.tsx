@@ -1,16 +1,8 @@
-import {
-  Button,
-} from '@material-ui/core'
+import { Button } from '@material-ui/core'
 import { BUTTON_ROW } from 'germy/constants'
-import {
-  getTransition,
-  theme,
-} from 'germy/theme'
+import { getTransition, theme } from 'germy/theme'
 import { ButtonRowKey } from 'germy/types'
-import {
-  logOpenedLink,
-  makeStyles,
-} from 'germy/utils'
+import { logOpenedLink, makeStyles } from 'germy/utils'
 import { bool } from 'prop-types'
 import React, { FunctionComponent } from 'react'
 
@@ -27,11 +19,8 @@ const useStyles = makeStyles<Props>({
     transition: getTransition(),
 
     opacity: props => (props.isTypingComplete ? 1 : 0),
-    transform: props => `translateY(${
-      props.isTypingComplete
-        ? 0
-        : theme.spacing(2)
-    }px)`,
+    transform: props =>
+      `translateY(${props.isTypingComplete ? 0 : theme.spacing(2)}px)`,
   },
 
   buttonRow: {

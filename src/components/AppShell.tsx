@@ -1,10 +1,7 @@
 import { CssBaseline } from '@material-ui/core'
 import { APP_HEAD } from 'germy/constants'
 import { theme } from 'germy/theme'
-import {
-  getViewportString,
-  makeStyles,
-} from 'germy/utils'
+import { getViewportString, makeStyles } from 'germy/utils'
 import PropTypes from 'prop-types'
 import React, { FunctionComponent, ReactNode } from 'react'
 import { Helmet } from 'react-helmet'

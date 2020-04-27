@@ -1,8 +1,4 @@
-import {
-  Dispatch,
-  SetStateAction,
-  useState,
-} from 'react'
+import { Dispatch, SetStateAction, useState } from 'react'
 
 export const useLocalStorage = <T>(
   key: string,
@@ -19,9 +15,10 @@ export const useLocalStorage = <T>(
 
   const setStoredValue = (valueOrFunction: SetStateAction<T>): void => {
     if (window.localStorage) {
-      const storedValue = valueOrFunction instanceof Function
-        ? valueOrFunction(value)
-        : valueOrFunction
+      const storedValue =
+        valueOrFunction instanceof Function
+          ? valueOrFunction(value)
+          : valueOrFunction
 
       setValue(storedValue)
       window.localStorage.setItem(key, JSON.stringify(storedValue))

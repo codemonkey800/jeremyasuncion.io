@@ -1,9 +1,7 @@
 import { makeStyles as muiMakeStyles } from '@material-ui/styles'
 import { Styles } from '@material-ui/styles/withStyles'
 import { StylesHook } from '@material-ui/styles/makeStyles'
-import {
-  IS_PROD,
-} from 'germy/constants'
+import { IS_PROD } from 'germy/constants'
 import { theme } from 'germy/theme'
 import { ViewportOptions } from 'germy/types'
 import ReactGA from 'react-ga'
@@ -14,8 +12,7 @@ const LAST_CAPITAL_CHAR_CODE = 'Z'.charCodeAt(0)
 const isCapital = (character: string): boolean => {
   const charCode = character.charCodeAt(0)
   return (
-    charCode >= FIRST_CAPITAL_CHAR_CODE
-    && charCode <= LAST_CAPITAL_CHAR_CODE
+    charCode >= FIRST_CAPITAL_CHAR_CODE && charCode <= LAST_CAPITAL_CHAR_CODE
   )
 }
 
@@ -36,19 +33,20 @@ const camelCaseToSnakeCase = (value: string): string => {
   do {
     nextDashIndex = findIndexOfFirstCapital(result)
     if (nextDashIndex >= 0) {
-      result = result.substring(0, nextDashIndex)
-        + result.substr(nextDashIndex + 1, 1)
-        + result.substring(nextDashIndex + 2)
+      result =
+        result.substring(0, nextDashIndex) +
+        result.substr(nextDashIndex + 1, 1) +
+        result.substring(nextDashIndex + 2)
     }
   } while (nextDashIndex >= 0)
 
   return result
 }
 
-export const getViewportString = (options: ViewportOptions): string => Object
-  .entries(options)
-  .map(([key, val]) => `${camelCaseToSnakeCase(key)}=${val}`)
-  .join(',')
+export const getViewportString = (options: ViewportOptions): string =>
+  Object.entries(options)
+    .map(([key, val]) => `${camelCaseToSnakeCase(key)}=${val}`)
+    .join(',')
 
 export const makeStyles = <P extends {} = {}, T = typeof theme>(
   styles: Styles<T, P>,
@@ -68,7 +66,5 @@ export const logPageView = (): void => {
   }
 }
 
-export const logOpenedLink = (href: string): void => ReactGA.outboundLink(
-  { label: href },
-  () => {},
-)
+export const logOpenedLink = (href: string): void =>
+  ReactGA.outboundLink({ label: href }, () => {})

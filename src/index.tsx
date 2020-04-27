@@ -13,7 +13,4 @@ const App: FunctionComponent = () => (
   </ThemeProvider>
 )
 
-render(
-  <App />,
-  document.querySelector('main'),
-)
+render(<App />, document.querySelector('main'))

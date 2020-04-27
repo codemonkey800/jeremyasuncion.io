@@ -55,9 +55,7 @@ const config = {
   resolve: {
     extensions: ['.js', '.json', '.ts', '.tsx'],
 
-    plugins: [
-      new TsConfigPathsPlugin(),
-    ],
+    plugins: [new TsConfigPathsPlugin()],
   },
 
   plugins: [
