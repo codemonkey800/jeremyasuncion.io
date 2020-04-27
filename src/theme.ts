@@ -9,8 +9,8 @@ export const theme = createMuiTheme({
   },
 })
 
-export const defaultTransition = theme.transitions.create(
-  'all',
+export const getTransition = (key = 'all'): string => theme.transitions.create(
+  key,
   {
     duration: theme.transitions.duration.complex,
     easing: theme.transitions.easing.easeInOut,

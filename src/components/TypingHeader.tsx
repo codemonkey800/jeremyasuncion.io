@@ -1,7 +1,7 @@
 import { func } from 'prop-types'
 import { APP_HEAD, TYPED_HEADERS } from 'germy/constants'
 import { useLocalStorage } from 'germy/hooks'
-import { theme } from 'germy/theme'
+import { getTransition, theme } from 'germy/theme'
 import { makeStyles } from 'germy/utils'
 import React, {
   Dispatch,
@@ -20,13 +20,7 @@ interface Props {
 const useStyles = makeStyles<Props>({
   header: {
     fontSize: '8vw',
-    transition: theme.transitions.create(
-      'transform',
-      {
-        duration: theme.transitions.duration.complex,
-        easing: theme.transitions.easing.easeInOut,
-      },
-    ),
+    transition: getTransition('transform'),
     transform: props => `translateY(${
       props.isTypingComplete
         ? 0

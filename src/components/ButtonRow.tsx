@@ -3,7 +3,7 @@ import {
 } from '@material-ui/core'
 import { BUTTON_ROW } from 'germy/constants'
 import {
-  defaultTransition,
+  getTransition,
   theme,
 } from 'germy/theme'
 import { ButtonRowKey } from 'germy/types'
@@ -24,7 +24,7 @@ const useStyles = makeStyles<Props>({
   button: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
-    transition: defaultTransition,
+    transition: getTransition(),
 
     opacity: props => (props.isTypingComplete ? 1 : 0),
     transform: props => `translateY(${
