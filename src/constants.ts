@@ -2,9 +2,6 @@ import { ButtonRowConfig } from 'germy/types'
 
 export const APP_HEAD = {
   AUTHOR: 'Jeremy Asuncion',
-  DESCRIPTION: 'Home page of the software engineer, Jeremy Asuncion.',
-  ROBOTO:
-    'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap',
   TITLE: 'jeremyasuncion.io',
   VIEWPORT: {
     'initial-scale': 1,

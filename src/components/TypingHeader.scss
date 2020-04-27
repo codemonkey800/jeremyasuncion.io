@@ -1,0 +1,10 @@
+@import '~germy/base';
+
+.header {
+  font-size: 8vw;
+  transition: transform ease-in-out $defaultDuration;
+
+  &.typingComplete {
+    transform: translateY(-$spacing * 4);
+  }
+}

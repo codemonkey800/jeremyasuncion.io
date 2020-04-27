@@ -1,8 +1,9 @@
 import { Button } from '@material-ui/core'
+import cns from 'classnames'
+import styles from 'germy/components/ButtonRow.scss'
 import { BUTTON_ROW } from 'germy/constants'
-import { getTransition, theme } from 'germy/theme'
 import { ButtonRowKey } from 'germy/types'
-import { logOpenedLink, makeStyles } from 'germy/utils'
+import { logOpenedLink } from 'germy/utils'
 import { bool } from 'prop-types'
 import React, { FunctionComponent } from 'react'
 
@@ -12,30 +13,14 @@ interface Props {
   isTypingComplete: boolean
 }
 
-const useStyles = makeStyles<Props>({
-  button: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-    transition: getTransition(),
-
-    opacity: props => (props.isTypingComplete ? 1 : 0),
-    transform: props =>
-      `translateY(${props.isTypingComplete ? 0 : theme.spacing(2)}px)`,
-  },
-
-  buttonRow: {
-    alignItems: 'center',
-    display: 'flex',
-    flex: 'initial',
-    justifyContent: 'center',
-  },
-})
-
 const ButtonRow: FunctionComponent<Props> = ({ isTypingComplete }) => {
-  const styles = useStyles({ isTypingComplete })
-
   return (
-    <div className={styles.buttonRow}>
+    <div
+      className={cns(
+        styles.buttonRow,
+        isTypingComplete && styles.typingComplete,
+      )}
+    >
       {buttonKeys.map(key => (
         <Button
           classes={{ root: styles.button }}

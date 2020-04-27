@@ -2,6 +2,7 @@ const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin')
 const HtmlPlugin = require('html-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const TsConfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
+const { TypedCssModulesPlugin } = require('typed-css-modules-webpack-plugin')
 const webpack = require('webpack')
 
 const isProd = process.env.NODE_ENV === 'production'
@@ -49,6 +50,32 @@ const config = {
           transpileOnly: true,
         },
       },
+
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
+            },
+          },
+          'sass-loader',
+        ],
+      },
+
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+
+      {
+        test: /\.(woff|woff2)$/,
+        loader: 'url-loader',
+      },
     ],
   },
 
@@ -64,12 +91,17 @@ const config = {
     }),
 
     new ForkTsCheckerPlugin({
+      checkSyntacticErrors: true,
       eslint: true,
     }),
 
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'development',
       GA_TRACKING_ID: '',
+    }),
+
+    new TypedCssModulesPlugin({
+      globPattern: 'src/**/*.scss',
     }),
   ],
 }

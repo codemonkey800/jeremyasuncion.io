@@ -1,8 +1,8 @@
-import { func } from 'prop-types'
+import cns from 'classnames'
+import { bool, func } from 'prop-types'
+import styles from 'germy/components/TypingHeader.scss'
 import { APP_HEAD, TYPED_HEADERS } from 'germy/constants'
 import { useLocalStorage } from 'germy/hooks'
-import { getTransition, theme } from 'germy/theme'
-import { makeStyles } from 'germy/utils'
 import React, {
   Dispatch,
   FunctionComponent,
@@ -17,17 +17,10 @@ interface Props {
   setIsTypingComplete: Dispatch<SetStateAction<boolean>>
 }
 
-const useStyles = makeStyles<Props>({
-  header: {
-    fontSize: '8vw',
-    transition: getTransition('transform'),
-    transform: props =>
-      `translateY(${props.isTypingComplete ? 0 : theme.spacing(6)}px)`,
-  },
-})
-
-export const TypingHeader: FunctionComponent<Props> = props => {
-  const styles = useStyles(props)
+export const TypingHeader: FunctionComponent<Props> = ({
+  isTypingComplete,
+  setIsTypingComplete,
+}) => {
   const [lastVisitedTime, setLastVisitedTime] = useLocalStorage(
     'lastVisitedTime',
     0,
@@ -54,8 +47,8 @@ export const TypingHeader: FunctionComponent<Props> = props => {
   return (
     <Typed
       backSpeed={30}
-      className={styles.header}
-      onComplete={() => props.setIsTypingComplete(true)}
+      className={cns(styles.header, isTypingComplete && styles.typingComplete)}
+      onComplete={() => setIsTypingComplete(true)}
       strings={strings}
       typeSpeed={30}
     />
@@ -63,5 +56,6 @@ export const TypingHeader: FunctionComponent<Props> = props => {
 }
 
 TypingHeader.propTypes = {
+  isTypingComplete: bool.isRequired,
   setIsTypingComplete: func.isRequired,
 }

@@ -1,0 +1,23 @@
+:global(html, body) {
+  border: 0;
+  box-sizing: content-box;
+  display: flex;
+  flex: auto;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+
+:global(#__next) {
+  display: flex;
+  flex: auto;
+}
+
+:global(main) {
+  align-items: center;
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  justify-content: center;
+}

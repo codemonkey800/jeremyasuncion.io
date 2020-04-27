@@ -1,3 +1,5 @@
+import 'typeface-roboto'
+
 import { ThemeProvider } from '@material-ui/styles'
 import { AppShell } from 'germy/components'
 import { Home } from 'germy/pages'

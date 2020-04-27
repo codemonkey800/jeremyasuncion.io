@@ -1,0 +1,21 @@
+@import '~germy/base';
+
+.button {
+  margin-left: $spacing;
+  margin-right: $spacing;
+}
+
+.buttonRow {
+  align-items: center;
+  display: flex;
+  flex: initial;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY($spacing * 2);
+  transition: all $defaultEasing $defaultDuration;
+
+  &.typingComplete {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
