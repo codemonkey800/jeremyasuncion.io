@@ -77,7 +77,7 @@ const config = {
 }
 
 if (isProd) {
-  config.mode = 'development'
+  config.mode = 'production'
   config.devtool = false
   config.output.filename = '[name].[contenthash].js'
   config.optimization = {
