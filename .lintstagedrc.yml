@@ -1,0 +1,4 @@
+'*':
+  - yarn prettier:fix
+'*.{js,ts,tsx}':
+  - yarn lint
