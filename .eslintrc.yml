@@ -1,44 +1,5 @@
 root: true
 
-parser: '@typescript-eslint/parser'
-parserOptions:
-  project: ./tsconfig.json
-
-plugins:
-  - '@typescript-eslint'
-
 extends:
-  - airbnb-typescript
-  - airbnb/hooks
-  - plugin:@typescript-eslint/eslint-recommended
-  - plugin:@typescript-eslint/recommended
-  - plugin:@typescript-eslint/recommended-requiring-type-checking
+  - airbnb-base
   - plugin:prettier/recommended
-  - prettier/@typescript-eslint
-  - prettier/react
-
-settings:
-  import/parsers:
-    '@typescript-eslint/parser':
-      - .ts
-      - .tsx
-
-  import/resolver:
-    typescript: {}
-
-rules:
-  '@typescript-eslint/explicit-function-return-type':
-    - error
-    - allowExpressions: true
-  '@typescript-eslint/member-delimiter-style':
-    - error
-    - multiline:
-        delimiter: none
-
-  import/no-default-export: error
-  import/prefer-default-export: off
-
-  react/jsx-props-no-spreading: off
-  react/react-in-jsx-scope: off
-
-  no-plusplus: off

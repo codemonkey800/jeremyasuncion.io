@@ -6,7 +6,7 @@
   "scripts": {
     "build": "NODE_ENV=production webpack --colors --progress",
     "dev": "webpack-dev-server --colors --progress --hot",
-    "lint": "eslint --ext .ts,.tsx src",
+    "lint": "eslint --ext .js,.ts,.tsx .",
     "prettier:fix": "prettier --write .",
     "prettier": "prettier --check .",
     "test": "jest",
