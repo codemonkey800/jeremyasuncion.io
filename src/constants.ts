@@ -33,8 +33,9 @@ export const IS_PROD = process.env.NODE_ENV === 'production'
 export const IS_DEV = process.env.NODE_ENV === 'development'
 
 export const TYPED_HEADERS = [
-  'Software Engineer II',
-  'Sumo',
+  'Frontend Engineer',
+  'Postmates X',
   'SJSU Alumnus',
+  'Skateboarder',
   'Steak Enthusiast',
 ]
